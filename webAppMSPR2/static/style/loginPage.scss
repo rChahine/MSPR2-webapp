@@ -24,9 +24,66 @@ a {
     color: #42b983;
 }
 
-.header {
-    width: 100%;
-    height: 10vh;
-    background: linear-gradient(#3f87a6, #f524ff);
-    box-shadow: 1px 2px 7px rgb(245,36,255);
+#login {
+  background: linear-gradient(#3f87a6 20%, #FFFFFF);
+}
+
+.body-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#loginForm {
+  padding: 30px;
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px #295D73;
+  background: white;
+  margin-left: -5%;
+}
+
+#emailLogin {
+  margin-bottom: 16px;
+}
+
+label {
+  float: left;
+  font-style: italic;
+  color: #295D73;
+}
+
+input {
+  border-radius: 10px;
+  border: 1px solid;
+  padding-left: 10px;
+  outline: 0;
+  margin-top: 5px;
+  width: 92%;
+}
+
+input:focus {
+  border: 1px solid #3f87a6;
+}
+
+#connectButton {
+  margin-top: 30px;
+  background: rgb(63, 135, 166);
+  padding: 10px;
+  border-radius: 20px;
+  outline: 0px;
+  border: rgb(63, 135, 166);
+  color: white;
+  width: 230px;
+}
+
+#connectButton:hover {
+  background: #295D73;
+}
+
+img {
+  float: left;
+  width: 8%;
+  padding: 15px;
 }
