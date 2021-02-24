@@ -29,3 +29,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  @import '../../static/style/loginPage.scss';
+</style>
