@@ -35,13 +35,11 @@ export default {
 
   methods: {
     test () {
-      axios.post('http://51.91.126.19/authentication', this.form, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        }})
-        .then((res) => {
+      axios.post('https://mspr2.herokuapp.com/authentication', this.form)
+        .then(({data}) => {
         // Perform Success Action
-          console.log(res)
+          localStorage.setItem('token', data.token);
+          this.$router.push('/file')
         })
         .catch((error) => {
           // error.response.status Check status code
