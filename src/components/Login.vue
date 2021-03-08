@@ -20,6 +20,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import axios from 'axios'
 
 export default {
@@ -35,8 +36,12 @@ export default {
 
   methods: {
     test () {
-      axios.post('https://mspr2.herokuapp.com/authentication', this.form)
-        .then(({data}) => {
+      axios.post('https://mspr2.herokuapp.com/authentication', this.form, {
+        headers : {
+          "Access-Control-Allow-Origin": "*",
+        }
+      })
+        .then((res) => {
         // Perform Success Action
           localStorage.setItem('token', data.token);
           this.$router.push('/file')
