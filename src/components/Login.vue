@@ -2,16 +2,16 @@
   <div id="login">
     <img src="../assets/LogoMSPR2.png">
     <div class="body-content">
-      <form id="loginForm" action="/" method="post"><!-- action = URL où doit être envoyé le formulaire -->
+      <form id="loginForm" v-on:submit.prevent="test"><!-- action = URL où doit être envoyé le formulaire -->
         <div id="emailLogin">
-          <label for="mail">E-mail</label>
+          <label for="identifiant">E-mail</label>
           <br />
-          <input type="email" id="mail" name="user_mail">
+          <input id="identifiant" v-model="form.identifiant">
         </div>
         <div>
-          <label for="psw">Password</label>
+          <label for="password">Password</label>
           <br />
-          <input id="psw" type="password" name="user_psw">
+          <input id="password" type="password" v-model="form.password">
         </div>
         <button id="connectButton">Se connecter</button>
       </form>
@@ -20,12 +20,45 @@
 </template>
 
 <script>
+/* eslint-disable */
+import axios from 'axios'
+
 export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      form: {
+        identifiant: '',
+        password: ''
+      }
+    }
+  },
+
+  methods: {
+    test () {
+      axios.post('https://mspr2.herokuapp.com/authentication', this.form, {
+        headers : {
+          "Access-Control-Allow-Origin": "*",
+        }
+      })
+        .then((res) => {
+        // Perform Success Action
+          localStorage.setItem('token', data.token);
+          this.$router.push('/file')
+        })
+        .catch((error) => {
+          // error.response.status Check status code
+          console.log(error)
+        })
+        .finally(() => {
+          // Perform action in always
+          console.log('Finally')
+        })
     }
   }
 }
 </script>
+
+<style>
+  @import '../../static/style/loginPage.scss';
+</style>

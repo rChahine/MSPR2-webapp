@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style>
-  @import '../static/style/loginPage.scss';
+  @import '../static/style/all.scss';
 </style>

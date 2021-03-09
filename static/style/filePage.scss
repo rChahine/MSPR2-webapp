@@ -1,0 +1,45 @@
+.importexport {
+  padding: 50px;
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px #295D73;
+  background: white;
+  margin: 10%;
+}
+
+.importexport:hover {
+  background-color : #295D73;
+  color : white;
+  border-color: #295D73;
+}
+
+.fileName {
+  color : #295D73;
+  margin-top : -15%;
+}
+
+.fileName img {
+  width : 2%;
+  display: inline;
+  margin-top: -1.5%;
+  cursor: pointer;
+}
+
+.sendButton {
+    width: fit-content;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 4px 4px 15px #295d73;
+    background: white;
+    cursor: pointer;
+    padding: 5px 15px 0 15px;
+    display: inline-grid;
+    margin-top: 20px;
+}
+
+.sendButton:hover {
+  background-color : #295D73;
+  color : white;
+  border-color: #295D73;
+}
