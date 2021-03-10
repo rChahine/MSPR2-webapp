@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <img src="../assets/LogoMSPR2.png"></img>
+    <img src="../assets/LogoMSPR2.png"/>
     <div class="body-content">
       <label class="importexport">
         Import
@@ -10,7 +10,7 @@
     </div>
     <div class="fileName" v-if="value.length > 0">
       File : {{ value[0].name }}
-      <img src="../assets/deleteFile.png" v-on:click="deleteFile"></img>
+      <img src="../assets/deleteFile.png" v-on:click="deleteFile"/>
     </div>
     <div class="sendButton" v-on:click="sendFile(value[0])">Send file</div>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 import axios from 'axios'
-  
+
 export default {
   name: 'File',
   data () {
@@ -28,17 +28,16 @@ export default {
   },
   methods: {
     handleFileChange (e) {
-      this.$emit('input', e.target.files[0]);
-      this.value.push(e.target.files[0]);
+      this.$emit('input', e.target.files[0])
+      this.value.push(e.target.files[0])
     },
-    deleteFile(e) {
-      this.value.splice(0, this.value.length);
+    deleteFile (e) {
+      this.value.splice(0, this.value.length)
     },
-    sendFile(file) {
-        console.log(file);
-        const formData = new FormData();
-        formData.append('file', file);
-        axios.post('https://mspr2.herokuapp.com/upload', formData, {headers: {'Authorization': localStorage.getItem('token')}})
+    sendFile (file) {
+      const formData = new FormData()
+      formData.append('file', file)
+      axios.post('https://mspr2.herokuapp.com/upload', formData, {headers: {'Authorization': localStorage.getItem('token')}})
         .then((res) => {
         // Perform Success Action
           console.log(res)
