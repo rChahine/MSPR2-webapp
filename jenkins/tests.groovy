@@ -15,7 +15,6 @@ pipeline {
             steps {
                 bat '''
                     npm run test
-                    npm run unit
                 '''
             }
         }
